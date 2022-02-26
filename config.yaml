@@ -1,8 +1,8 @@
 settings:
-  title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  title: 'FinnLAB Status Page'
+  url: 'https://status.finnlab.moe' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 30 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'All Systems Operational'
@@ -24,16 +24,28 @@ monitors:
     followRedirect: false # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
-    expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
-
   - id: russia-mil
     name: Russian Military Site
+    description: 'This will appear as "UP", if the site is still down'
     url: 'https://mil.ru/'
     method: GET
-    expectStatus: 200
+    expectStatus: 418
+    
+  - id: main # unique identifier
+    name: finnlab.moe
+    description: 'My main Website.' # default=empty
+    url: 'https://finnlab.moe/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
+    
+    
+  - id: mail # unique identifier
+    name: mailserver.finnlab.moe
+    description: 'My E-Mail server' # default=empty
+    url: 'https://mailserver.finnlab.moe/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
