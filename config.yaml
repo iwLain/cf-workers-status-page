@@ -17,22 +17,22 @@ settings:
 monitors:
   - id: workers-cloudflare-com # unique identifier
     name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
+    description: 'CF Workers (Where this page is hosted on)' # default=empty
     url: 'https://workers.cloudflare.com/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
 
-  - id: russia-mil
-    name: Russian Military Site
-    description: 'This will appear as "UP", if the site is still down'
-    url: 'https://mil.ru/'
+  - id: cloud
+    name: Cloud
+    description: 'My NextCloud instance'
+    url: 'https://cloud.finnlab.moe/'
     method: GET
-    expectStatus: 418
+    expectStatus: 200
     
   - id: main # unique identifier
-    name: finnlab.moe
+    name: Main Site
     description: 'My main Website.' # default=empty
     url: 'https://finnlab.moe/' # URL to fetch
     method: GET # default=GET
@@ -41,19 +41,19 @@ monitors:
     linkable: true # allows the title to be a link, default=true
     
     
-  - id: mail # unique identifier
-    name: mailserver.finnlab.moe
-    description: 'My E-Mail server' # default=empty
-    url: 'https://mailserver.finnlab.moe/' # URL to fetch
+  - id: build # unique identifier
+    name: tc.dc.finnlab.moe
+    description: 'My Ci/Cd system' # default=empty
+    url: 'https://tc.dc.finnlab.moe/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
 
-  - id: code # unique identifier
-    name: code.finnlab.moe
-    description: 'VSCode Server' # default=empty
-    url: 'https://code.finnlab.moe/' # URL to fetch
+  - id: git # unique identifier
+    name: git.finnlab.moe
+    description: 'My Git Server' # default=empty
+    url: 'https://git.finnlab.moe/' # URL to fetch
     method: GET # default=GET
     expectStatus: 403 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
