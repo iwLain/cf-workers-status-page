@@ -42,7 +42,7 @@ monitors:
   - id: build # unique identifier
     name: TeamCity
     description: 'My Ci/Cd system' # default=empty
-    url: 'https://tc.dc.finnlab.moe/' # URL to fetch
+    url: 'https://tc.dc.finnlab.moe/login.html' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
