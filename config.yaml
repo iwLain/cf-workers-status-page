@@ -21,8 +21,6 @@ monitors:
     url: 'https://workers.cloudflare.com/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
 
   - id: cloud
     name: Cloud
@@ -30,15 +28,15 @@ monitors:
     url: 'https://cloud.finnlab.moe/'
     method: GET
     expectStatus: 200
+    followRedirect: true
     
   - id: main # unique identifier
     name: Main Site
-    description: 'My main Website.' # default=empty
+    description: 'My main website.' # default=empty
     url: 'https://finnlab.moe/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
-    linkable: true # allows the title to be a link, default=true
     
     
   - id: build # unique identifier
@@ -47,7 +45,7 @@ monitors:
     url: 'https://tc.dc.finnlab.moe/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
+    followRedirect: true # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
 
   - id: git # unique identifier
@@ -56,5 +54,5 @@ monitors:
     url: 'https://git.finnlab.moe/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
+    followRedirect: true # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
